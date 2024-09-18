@@ -1,6 +1,8 @@
 package com.example.backend_blog.usuario;
 
 import java.sql.Timestamp;
+import java.time.Instant;
+import java.time.LocalDateTime;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -50,6 +52,7 @@ public class Usuario {
         this.email = data.email();
         this.senha = data.senha();
         this.admin = data.admin();
+        this.criado_em =  Timestamp.from(Instant.now());
     }
 
 	public Long getId() {
